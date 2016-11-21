@@ -48,6 +48,8 @@
      <Compile Include="Assets\BackCamera.cs" />
      <Compile Include="Assets\GameCamera.cs" />
      <Compile Include="Assets\Player.cs" />
+     <None Include="Assets\Scripts\Behaviac\behaviors\wolfman.xml" />
+     <None Include="Assets\Scripts\Behaviac\ProjectSoul.workspace.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity5.3/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

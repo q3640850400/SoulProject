@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<workspace name="ProjectSoul" xmlmetafolder="." folder="behaviors" export="exported" language="cpp">
+  <export>
+    <cpp>
+      <isexported>False</isexported>
+      <exportunifiedfile>True</exportunifiedfile>
+      <folder>../exported</folder>
+    </cpp>
+  </export>
+</workspace>
