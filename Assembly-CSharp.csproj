@@ -45,9 +45,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BackCamera.cs" />
-     <Compile Include="Assets\GameCamera.cs" />
-     <Compile Include="Assets\Player.cs" />
+     <Compile Include="Assets\Scripts\BackCamera.cs" />
+     <Compile Include="Assets\Scripts\GameCamera.cs" />
+     <Compile Include="Assets\Scripts\Game_Ctrl.cs" />
+     <Compile Include="Assets\Scripts\Input_Ctrl.cs" />
+     <Compile Include="Assets\Scripts\Net_Ctrl.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
      <None Include="Assets\Scripts\Behaviac\behaviors\wolfman.xml" />
      <None Include="Assets\Scripts\Behaviac\ProjectSoul.workspace.xml" />
  <Reference Include="UnityEngine.UI">
@@ -55,6 +58,9 @@
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Unity5.3/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="arcalet">
+ <HintPath>D:/MyUnityProjects/SoulProject/Assets/Scripts/Arcalet/arcalet.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
