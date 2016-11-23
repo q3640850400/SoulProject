@@ -6,10 +6,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5EDAC6AB-5918-9BE3-89D3-21FF87A0C0EA}</ProjectGuid>
+    <ProjectGuid>{26185B01-62D2-C743-1605-06F1EAA8194A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -45,49 +45,56 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\DragonBones\unity\Editor\UnityEditor.cs" />
+     <Compile Include="Assets\Scripts\3rdParty\MiniJSON.cs" />
+     <Compile Include="Assets\Scripts\BackCamera.cs" />
+     <Compile Include="Assets\Scripts\Ctrl.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\animation\Animation.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\animation\AnimationState.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\animation\BaseTimelineState.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\animation\IAnimateble.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\animation\TimelineState.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\animation\WorldClock.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\armature\Armature.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\armature\Bone.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\armature\IArmatureDisplay.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\armature\Slot.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\armature\TransformObject.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\core\BaseObject.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\core\DragonBones.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\event\EventObject.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\event\IEventDispatcher.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\factory\BaseFactory.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\geom\Geom.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\model\AnimationData.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\model\ArmatureData.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\model\DragonBonesData.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\model\FrameData.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\model\TimelineData.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\parser\DataParser.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\parser\ObjectDataParser.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\texture\TextureData.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\unity\UnityArmatureComponent.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\unity\UnityEventDispatcher.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\unity\UnityFactory.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\unity\UnitySlot.cs" />
+     <Compile Include="Assets\Scripts\DragonBones\unity\UnityTextureData.cs" />
+     <Compile Include="Assets\Scripts\GameCamera.cs" />
+     <Compile Include="Assets\Scripts\Game_Ctrl.cs" />
+     <Compile Include="Assets\Scripts\Init_Ctrl.cs" />
+     <Compile Include="Assets\Scripts\Input_Ctrl.cs" />
+     <Compile Include="Assets\Scripts\Net_Ctrl.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
      <None Include="Assets\Scripts\Behaviac\behaviors\wolfman.xml" />
      <None Include="Assets\Scripts\Behaviac\ProjectSoul.workspace.xml" />
- <Reference Include="UnityEditor.Advertisements">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.EditorTestsRunner">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.Networking">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.TreeEditor">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
- </Reference>
  <Reference Include="arcalet">
  <HintPath>F:/MyUnityProjects/SoulProject/Assets/Scripts/Arcalet/arcalet.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>F:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.Android.Extensions">
- <HintPath>F:/Program Files/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.WindowsStandalone.Extensions">
- <HintPath>F:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
- </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{26185B01-62D2-C743-1605-06F1EAA8194A}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
