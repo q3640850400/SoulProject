@@ -4,11 +4,11 @@ using System.Collections;
 public class Player : MonoBehaviour {
 	public static Player Instance = null;
 	private CharacterController cc=null;
-	public float JUMPW;
-	public float SPD;
+	public float JUMPW = 5f;
+	public float SPD= 5f;
 	public float ATK;
-	public float Gravity;
-	private int facedr;//面向0左边，1右边
+	public float Gravity= 9.8f;
+	private int facedr = 1;//面向右边;//面向0左边，1右边
 	public GameObject sp=null;
 	private Rigidbody2D Rbody2D = null;
 	public int unitid = 0;
@@ -28,9 +28,6 @@ public class Player : MonoBehaviour {
 		atk ();
 	}
 	void init(){
-		JUMPW = 5f;
-		facedr = 1;//面向右边
-		SPD = 5f;
 		Gravity = 9.8f;
 		cc = gameObject.GetComponent<CharacterController> ();
 		Rbody2D = gameObject.GetComponent<Rigidbody2D> ();
