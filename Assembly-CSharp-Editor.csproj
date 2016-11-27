@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\Editor\Test.cs" />
      <Compile Include="Assets\Scripts\DragonBones\unity\Editor\UnityEditor.cs" />
      <None Include="Assets\Scripts\Behaviac\behaviors\wolfman.xml" />
      <None Include="Assets\Scripts\Behaviac\ProjectSoul.workspace.xml" />

@@ -1,5 +1,6 @@
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\Assembly-CSharp.dll
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\MyUnityProjects\SoulProject\Temp\bin\Debug\arcalet.dll
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\UnityEditor.dll
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\UnityEngine.dll
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\UnityEngine.Networking.dll
@@ -16,5 +17,6 @@ D:\MyUnityProjects\SoulProject\Temp\bin\Debug\UnityEngine.xml
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\UnityEditor.xml
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\UnityEngine.UI.xml
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\UnityEngine.Networking.xml
+D:\MyUnityProjects\SoulProject\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 D:\MyUnityProjects\SoulProject\obj\Debug\Assembly-CSharp.dll
 D:\MyUnityProjects\SoulProject\obj\Debug\Assembly-CSharp.pdb

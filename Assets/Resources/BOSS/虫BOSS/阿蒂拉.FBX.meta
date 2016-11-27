@@ -1,0 +1,368 @@
+fileFormatVersion: 2
+guid: e7c7422c36e02934d875cabd0fd93907
+timeCreated: 1480090156
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bone01
+    100002: Bone02
+    100004: Bone03
+    100006: Bone04
+    100008: Bone05
+    100010: Bone06
+    100012: Bone07
+    100014: Bone08
+    100016: Bone09
+    100018: Bone10
+    100020: Bone11
+    100022: Bone12
+    100024: Bone13
+    100026: Bone14
+    100028: Bone15
+    100030: Bone16
+    100032: Bone17
+    100034: Bone18
+    100036: Bone19
+    100038: Bone20
+    100040: Bone21
+    100042: Bone22
+    100044: Bone23
+    100046: Bone24
+    100048: Bone25
+    100050: Bone26
+    100052: Bone27
+    100054: Bone28
+    100056: Bone29
+    100058: Bone30
+    100060: Bone31
+    100062: Bone32
+    100064: Bone33
+    100066: Bone34
+    100068: Bone35
+    100070: Bone36
+    100072: Bone37
+    100074: Bone38
+    100076: Bone39
+    100078: Bone40
+    100080: Bone41
+    100082: Bone42
+    100084: Bone43
+    100086: Bone44
+    100088: Bone45
+    100090: Bone46
+    100092: Bone47
+    100094: Bone48
+    100096: Bone49
+    100098: Bone50
+    100100: Bone51
+    100102: Bone52
+    100104: Bone53
+    100106: Bone54
+    100108: Dummy01
+    100110: Particle View 01
+    100112: "\u5929\u7A7A\u5149"
+    100114: "\u6218\u6597"
+    100116: "\u6A21\u578B"
+    100118: "\u6B47\u606F01"
+    100120: "\u6B47\u606F01.Target"
+    100122: "\u6B63\u976201"
+    100124: "\u6B63\u976201.Target"
+    100126: "\u706F\u5149"
+    100128: "\u706F\u5149.\u76EE\u6807"
+    100130: //RootNode
+    400000: Bone01
+    400002: Bone02
+    400004: Bone03
+    400006: Bone04
+    400008: Bone05
+    400010: Bone06
+    400012: Bone07
+    400014: Bone08
+    400016: Bone09
+    400018: Bone10
+    400020: Bone11
+    400022: Bone12
+    400024: Bone13
+    400026: Bone14
+    400028: Bone15
+    400030: Bone16
+    400032: Bone17
+    400034: Bone18
+    400036: Bone19
+    400038: Bone20
+    400040: Bone21
+    400042: Bone22
+    400044: Bone23
+    400046: Bone24
+    400048: Bone25
+    400050: Bone26
+    400052: Bone27
+    400054: Bone28
+    400056: Bone29
+    400058: Bone30
+    400060: Bone31
+    400062: Bone32
+    400064: Bone33
+    400066: Bone34
+    400068: Bone35
+    400070: Bone36
+    400072: Bone37
+    400074: Bone38
+    400076: Bone39
+    400078: Bone40
+    400080: Bone41
+    400082: Bone42
+    400084: Bone43
+    400086: Bone44
+    400088: Bone45
+    400090: Bone46
+    400092: Bone47
+    400094: Bone48
+    400096: Bone49
+    400098: Bone50
+    400100: Bone51
+    400102: Bone52
+    400104: Bone53
+    400106: Bone54
+    400108: Dummy01
+    400110: Particle View 01
+    400112: "\u5929\u7A7A\u5149"
+    400114: "\u6218\u6597"
+    400116: "\u6A21\u578B"
+    400118: "\u6B47\u606F01"
+    400120: "\u6B47\u606F01.Target"
+    400122: "\u6B63\u976201"
+    400124: "\u6B63\u976201.Target"
+    400126: "\u706F\u5149"
+    400128: "\u706F\u5149.\u76EE\u6807"
+    400130: //RootNode
+    4300000: "\u6A21\u578B"
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: "\u6A21\u578B"
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 13
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Dummy01
+        weight: 1
+      - path: Dummy01/Bone01
+        weight: 1
+      - path: Dummy01/Bone01/Bone02
+        weight: 1
+      - path: Dummy01/Bone01/Bone02/Bone03
+        weight: 1
+      - path: Dummy01/Bone01/Bone02/Bone03/Bone04
+        weight: 1
+      - path: Dummy01/Bone01/Bone02/Bone03/Bone04/Bone05
+        weight: 1
+      - path: Dummy01/Bone01/Bone02/Bone03/Bone04/Bone05/Bone06
+        weight: 1
+      - path: Dummy01/Bone01/Bone02/Bone03/Bone04/Bone05/Bone06/Bone07
+        weight: 1
+      - path: Dummy01/Bone01/Bone02/Bone03/Bone04/Bone05/Bone06/Bone07/Bone08
+        weight: 1
+      - path: Dummy01/Bone52
+        weight: 1
+      - path: Dummy01/Bone52/Bone09
+        weight: 1
+      - path: Dummy01/Bone52/Bone53
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone10
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone32
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone32/Bone33
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone32/Bone33/Bone34
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone32/Bone33/Bone34/Bone35
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone32/Bone33/Bone34/Bone35/Bone36
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone32/Bone33/Bone34/Bone44
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone32/Bone33/Bone34/Bone44/Bone45
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone32/Bone33/Bone34/Bone44/Bone45/Bone46
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone32/Bone42
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone32/Bone42/Bone43
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone37
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone37/Bone38
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone37/Bone38/Bone39
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone37/Bone38/Bone39/Bone40
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone37/Bone38/Bone39/Bone40/Bone41
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone37/Bone38/Bone39/Bone49
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone37/Bone38/Bone39/Bone49/Bone50
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone37/Bone38/Bone39/Bone49/Bone50/Bone51
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone37/Bone47
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone37/Bone47/Bone48
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone11
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone13
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone13/Bone14
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone13/Bone14/Bone15
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone16
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone16/Bone17
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone16/Bone17/Bone18
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone19
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone19/Bone20
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone19/Bone20/Bone21
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone22
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone22/Bone23
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone22/Bone23/Bone24
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone25
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone25/Bone26
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone25/Bone26/Bone27
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone28
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone28/Bone29
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone30
+        weight: 1
+      - path: Dummy01/Bone52/Bone53/Bone54/Bone12/Bone30/Bone31
+        weight: 1
+      - path: Particle View 01
+        weight: 1
+      - path: "\u5929\u7A7A\u5149"
+        weight: 1
+      - path: "\u6218\u6597"
+        weight: 1
+      - path: "\u6A21\u578B"
+        weight: 1
+      - path: "\u6B47\u606F01"
+        weight: 1
+      - path: "\u6B47\u606F01.Target"
+        weight: 1
+      - path: "\u6B63\u976201"
+        weight: 1
+      - path: "\u6B63\u976201.Target"
+        weight: 1
+      - path: "\u706F\u5149"
+        weight: 1
+      - path: "\u706F\u5149.\u76EE\u6807"
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

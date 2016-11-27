@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	public static Player Instance = null;
-	//private CharacterController cc=null;
+	private CharacterController cc=null;
 	public float JUMPW = 5f;
 	public float SPD= 5f;
 	public float ATK;
@@ -24,13 +24,16 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		move ();
-		jump ();
-		atk ();
+		//move ();
+		//jump ();
+		//atk ();
+		atk3D();
+		move3D();
+		gravity ();
 	}
 	void init(){
 		Gravity = 9.8f;
-		//cc = gameObject.GetComponent<CharacterController> ();//没有用到CharacterController
+		cc = gameObject.GetComponent<CharacterController> ();//没有用到CharacterController
 		Rbody2D = gameObject.GetComponent<Rigidbody2D> ();
 		animator = this.GetComponentInChildren<Animator> ();
 	}
@@ -40,7 +43,7 @@ public class Player : MonoBehaviour {
 	}
 	//暂时未用
 	void gravity(){
-		//cc.Move (new Vector3(0f, -Gravity, 0f));
+		cc.Move (new Vector3(0f, -Gravity, 0f));
 	}
 	//位置更新
 	public void resetPos(float posx,float posy,float posz,int facedr){
@@ -50,6 +53,22 @@ public class Player : MonoBehaviour {
 	public void onjump(){
 		Rbody2D.velocity =new Vector2(0f,JUMPW);
 		animator.SetInteger ("stat", 1);
+	}
+	void move3D(){
+		float dr = Input.GetAxis ("Horizontal");
+		//Vector3 dr = new Vector3 (Input.GetAxis ("Horizontal"), 0f, 0f);
+		if (dr != 0) {
+			if (dr > 0) {
+				transform.localRotation = Quaternion.Euler (0, 180, 0);
+			} else {
+				transform.localRotation = Quaternion.Euler (0, 0, 0);
+			}
+			cc.Move (new Vector3(dr,0,0) * SPD * Time.deltaTime);
+			animator.SetInteger ("stat", 1);
+		} else {
+			if(animator.GetInteger("stat")==1)
+				animator.SetInteger ("stat", 0);
+		}
 	}
 	//移动
 	void move(){
@@ -91,6 +110,26 @@ public class Player : MonoBehaviour {
 		int atkid=-1;
 		if (Input.GetButtonDown ("Fire1")) {
 			animator.SetInteger ("stat", 2);
+			atkid = 0;
+		}
+		if (Input.GetButtonDown ("Fire2")) {
+			animator.SetInteger ("stat", 3);
+			atkid = 1;
+		}
+		if (Input.GetButtonDown ("Fire3")) {
+			animator.SetInteger ("stat", 4);
+			atkid = 2;
+		}
+		if (online && atkid != -1) {
+			// 讯息格式: "atk:poid/unitid/atkid"
+			Net_Ctrl.Instance.ag.Send("atk:"+Net_Ctrl.Instance.ag.poid.ToString()+"/"+unitid.ToString()+"/"+atkid.ToString());
+		}
+	}
+	void atk3D(){
+		int atkid=-1;
+		if (Input.GetButtonDown ("Fire1")) {
+			animator.SetInteger ("stat", 2);
+			Debug.Log ("asd");
 			atkid = 0;
 		}
 		if (Input.GetButtonDown ("Fire2")) {
