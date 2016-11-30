@@ -6,8 +6,7 @@ using System.Collections;
 // Create a menu item that causes a new controller and statemachine to be created.
 
 public class SM : MonoBehaviour {
-
-	[MenuItem ("MyMenu/Create Controller")]
+	[MenuItem ("MyMenu/CreateController")]
 	static void CreateController () {
 
 		// Creates the controller
@@ -53,6 +52,55 @@ public class SM : MonoBehaviour {
 		stateMachineTransition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.If, 0, "GotoC");
 		rootStateMachine.AddStateMachineTransition(stateMachineA, stateMachineB);	
 	}
+	[MenuItem ("MyMenu/AddSwordAnimation")]
+	static void AddSwordAnimation(){
+		string rolename;
+		string actionname;
+		AnimatorState stateA1;
+		AnimationClip newClip;
 
+		// Creates the controller
+		rolename = "sword";
+		var controller = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath ("Assets/Mecanim/"+rolename+".controller");
+
+		// Add parameters
+		controller.AddParameter("stat", AnimatorControllerParameterType.Int);
+
+		// Add StateMachines
+		var rootStateMachine = controller.layers[0].stateMachine;
+
+		// Add States
+		AnimatorState idle=MyAddState(rootStateMachine,"sword","idle");
+		AnimatorState run=MyAddState(rootStateMachine,"sword","run");
+		AnimatorState gun=MyAddState(rootStateMachine,"sword","gun");
+		AnimatorState atkidle=MyAddState(rootStateMachine,"sword","atkidle");
+		AnimatorState hardhit=MyAddState(rootStateMachine,"sword","hardhit");
+		AnimatorState jump=MyAddState(rootStateMachine,"sword","jump");
+		AnimatorState lighthit=MyAddState(rootStateMachine,"sword","lighthit");
+		AnimatorState takeweapon=MyAddState(rootStateMachine,"sword","takeweapon");
+		AnimatorState putweapon=MyAddState(rootStateMachine,"sword","putweapon");
+
+		// Add Transitions
+		var transition_idle2run=idle.AddTransition(run);
+		transition_idle2run.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "stat");
+		transition_idle2run.hasExitTime = false;
+
+		var transition_idle2gun=idle.AddTransition(gun);
+		transition_idle2gun.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 2, "stat");
+		transition_idle2gun.hasExitTime = false;
+
+		var transition_run2gun=run.AddTransition(gun);
+		transition_run2gun.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 3, "stat");
+		transition_run2gun.hasExitTime = false;
+
+
+	}
+	static AnimatorState MyAddState(AnimatorStateMachine sm,string rolename,string actionname)
+	{
+		AnimationClip newClip = AssetDatabase.LoadAssetAtPath("Assets/Resources/主角/"+rolename+"@"+actionname+".FBX", typeof(AnimationClip)) as AnimationClip;
+		AnimatorState d = sm.AddState(actionname);
+		d.motion = newClip;
+		return d;
+	}
 
 }

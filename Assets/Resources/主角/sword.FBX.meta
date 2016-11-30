@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f747bc578eea861468628b1ff4a5d5be
-timeCreated: 1480514814
+guid: 593589cbe16028246924712fe06fd0c7
+timeCreated: 1480515241
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -39,10 +39,11 @@ ModelImporter:
     100062: IK-Neck
     100064: IK-RightFoot
     100066: IK-RightHand
-    100068: Point001
-    100070: //RootNode
-    100072: "\u624B\u5251\u9AA8\u9ABC"
-    100074: "\u80CC\u5251\u9AA8\u9ABC"
+    100068: npc007
+    100070: Point001
+    100072: //RootNode
+    100074: "\u624B\u5251\u9AA8\u9ABC"
+    100076: "\u80CC\u5251\u9AA8\u9ABC"
     400000: Bone001
     400002: Bone002
     400004: Bone003
@@ -77,12 +78,14 @@ ModelImporter:
     400062: IK-Neck
     400064: IK-RightFoot
     400066: IK-RightHand
-    400068: Point001
-    400070: //RootNode
-    400072: "\u624B\u5251\u9AA8\u9ABC"
-    400074: "\u80CC\u5251\u9AA8\u9ABC"
-    7400000: Take 001
+    400068: npc007
+    400070: Point001
+    400072: //RootNode
+    400074: "\u624B\u5251\u9AA8\u9ABC"
+    400076: "\u80CC\u5251\u9AA8\u9ABC"
+    4300000: npc007
     9500000: //RootNode
+    13700000: npc007
   materials:
     importMaterials: 1
     materialName: 0
