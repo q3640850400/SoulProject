@@ -1,4 +1,3 @@
-F:\MyUnityProjects\SoulProject\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\Assembly-CSharp-Editor.dll
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\Assembly-CSharp-Editor.pdb
 D:\MyUnityProjects\SoulProject\Temp\bin\Debug\arcalet.dll
@@ -37,3 +36,6 @@ D:\MyUnityProjects\SoulProject\Temp\bin\Debug\UnityEditor.TreeEditor.xml
 D:\MyUnityProjects\SoulProject\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
 D:\MyUnityProjects\SoulProject\obj\Debug\Assembly-CSharp-Editor.dll
 D:\MyUnityProjects\SoulProject\obj\Debug\Assembly-CSharp-Editor.pdb
+F:\MyUnityProjects\SoulProject\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
+F:\MyUnityProjects\SoulProject\obj\Debug\Assembly-CSharp-Editor.dll
+F:\MyUnityProjects\SoulProject\obj\Debug\Assembly-CSharp-Editor.pdb

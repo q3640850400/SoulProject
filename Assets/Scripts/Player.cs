@@ -27,8 +27,8 @@ public class Player : MonoBehaviour {
 		//move ();
 		//jump ();
 		//atk ();
-		atk3D();
-		move3D();
+		kbatk3D();
+		kbmove3D();
 		gravity ();
 	}
 	void init(){
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour {
 		Rbody2D.velocity =new Vector2(0f,JUMPW);
 		animator.SetInteger ("stat", 1);
 	}
-	void move3D(){
+	void kbmove3D(){
 		float dr = Input.GetAxis ("Horizontal");
 		//Vector3 dr = new Vector3 (Input.GetAxis ("Horizontal"), 0f, 0f);
 		if (dr != 0) {
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 	//移动
-	void move(){
+	void kbmove(){
 		int stat = animator.GetInteger ("stat");
 		if ( stat== 0 || stat==1) {
 			Vector3 dr = new Vector3 (Input.GetAxis ("Horizontal"), 0f, 0f);
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 	//跳跃
-	void jump(){
+	void kbjump(){
 		if (Input.GetButtonDown("Jump")) {
 			Rbody2D.velocity =new Vector2(0f,JUMPW);
 			animator.SetInteger ("stat", 1);
@@ -106,7 +106,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 	//攻击
-	void atk(){
+	void kbatk(){
 		int atkid=-1;
 		if (Input.GetButtonDown ("Fire1")) {
 			animator.SetInteger ("stat", 2);
@@ -125,7 +125,7 @@ public class Player : MonoBehaviour {
 			Net_Ctrl.Instance.ag.Send("atk:"+Net_Ctrl.Instance.ag.poid.ToString()+"/"+unitid.ToString()+"/"+atkid.ToString());
 		}
 	}
-	void atk3D(){
+	void kbatk3D(){
 		int atkid=-1;
 		if (Input.GetButtonDown ("Fire1")) {
 			animator.SetInteger ("stat", 2);
@@ -144,5 +144,28 @@ public class Player : MonoBehaviour {
 			// 讯息格式: "atk:poid/unitid/atkid"
 			Net_Ctrl.Instance.ag.Send("atk:"+Net_Ctrl.Instance.ag.poid.ToString()+"/"+unitid.ToString()+"/"+atkid.ToString());
 		}
+	}
+	public void gun(){
+		animator.SetInteger ("act",3);
+	}
+	public void run(){
+		animator.SetInteger ("act",1);
+	}
+	public void takeweapon(){
+		animator.SetInteger ("act",7);
+		animator.SetInteger ("stat",1);
+	}
+	public void jump(){
+		animator.SetInteger ("act",2);
+	}
+	public void lighthit(){
+		animator.SetInteger ("act",4);
+	}
+	public void hardhit(){
+		animator.SetInteger ("act",5);
+	}
+	public void putweapon(){
+		animator.SetInteger ("act",6);
+		animator.SetInteger ("stat",0);
 	}
 }

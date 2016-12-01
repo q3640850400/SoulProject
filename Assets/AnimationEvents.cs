@@ -12,7 +12,7 @@ public class AnimationEvents : MonoBehaviour {
 	void Update () {
 	
 	}
-	public void Idle(){
-		animator.SetInteger ("stat", 0);
+	public void Idle(int f){
+		animator.SetInteger ("act", 0);
 	}
 }

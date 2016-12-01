@@ -5,7 +5,7 @@ using System.Collections;
 
 // Create a menu item that causes a new controller and statemachine to be created.
 
-public class SM : MonoBehaviour {
+public class SM : Editor {
 	[MenuItem ("MyMenu/CreateController")]
 	static void CreateController () {
 
@@ -64,40 +64,82 @@ public class SM : MonoBehaviour {
 		var controller = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath ("Assets/Mecanim/"+rolename+".controller");
 
 		// Add parameters
-		controller.AddParameter("stat", AnimatorControllerParameterType.Int);
-
+		controller.AddParameter("act", AnimatorControllerParameterType.Int);
+		controller.AddParameter("stat", AnimatorControllerParameterType.Int);//0收刀，1拔刀
 		// Add StateMachines
 		var rootStateMachine = controller.layers[0].stateMachine;
 
 		// Add States
-		AnimatorState idle=MyAddState(rootStateMachine,"sword","idle");
-		AnimatorState run=MyAddState(rootStateMachine,"sword","run");
-		AnimatorState gun=MyAddState(rootStateMachine,"sword","gun");
-		AnimatorState atkidle=MyAddState(rootStateMachine,"sword","atkidle");
-		AnimatorState hardhit=MyAddState(rootStateMachine,"sword","hardhit");
-		AnimatorState jump=MyAddState(rootStateMachine,"sword","jump");
-		AnimatorState lighthit=MyAddState(rootStateMachine,"sword","lighthit");
-		AnimatorState takeweapon=MyAddState(rootStateMachine,"sword","takeweapon");
-		AnimatorState putweapon=MyAddState(rootStateMachine,"sword","putweapon");
+		AnimatorState idle=MyAddState(rootStateMachine,"sword","idle",WrapMode.Loop);
+		AnimatorState run=MyAddState(rootStateMachine,"sword","run",WrapMode.Loop);
+		AnimatorState gun=MyAddState(rootStateMachine,"sword","gun",WrapMode.Once);
+		AnimationEvent[] ae=new AnimationEvent[1];
+		ae[0]=new AnimationEvent(); 
+		ae[0].time = 1f;
+		ae[0].functionName = "Idle";
+		AnimationUtility.SetAnimationEvents (idle.motion as AnimationClip,ae);
+		AnimatorState atkidle=MyAddState(rootStateMachine,"sword","atkidle",WrapMode.Loop);
+		AnimatorState hardhit=MyAddState(rootStateMachine,"sword","hardhit",WrapMode.Once);
+		AnimatorState jump=MyAddState(rootStateMachine,"sword","jump",WrapMode.Once);
+		AnimatorState lighthit=MyAddState(rootStateMachine,"sword","lighthit",WrapMode.Once);
+		AnimatorState takeweapon=MyAddState(rootStateMachine,"sword","takeweapon",WrapMode.Once);
+		AnimatorState putweapon=MyAddState(rootStateMachine,"sword","putweapon",WrapMode.Once);
 
 		// Add Transitions
+
+		//idle to others
 		var transition_idle2run=idle.AddTransition(run);
-		transition_idle2run.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "stat");
+		transition_idle2run.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "act");
 		transition_idle2run.hasExitTime = false;
+		AnimatorStateTransition transition;
+		transition = idle.AddTransition (takeweapon);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 7, "act");
+		transition.hasExitTime = false;
 
-		var transition_idle2gun=idle.AddTransition(gun);
-		transition_idle2gun.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 2, "stat");
-		transition_idle2gun.hasExitTime = false;
+		//run to others
+		transition = run.AddTransition (jump);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 2, "act");
+		transition.hasExitTime = false;
+		transition = run.AddTransition (gun);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 3, "act");
+		transition.hasExitTime = false;
 
-		var transition_run2gun=run.AddTransition(gun);
-		transition_run2gun.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 3, "stat");
-		transition_run2gun.hasExitTime = false;
+		//atkidle to others
+		transition = atkidle.AddTransition (run);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "act");
+		transition.hasExitTime = false;
+		transition = idle.AddTransition (putweapon);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 6, "act");
+		transition.hasExitTime = false;
 
-
+		//others to others
+		transition = takeweapon.AddTransition (atkidle);
+		transition.hasExitTime = true;
+		transition = putweapon.AddTransition (idle);
+		transition.hasExitTime = true;
+		transition = gun.AddTransition (idle);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 0, "stat");
+		transition.hasExitTime = true;
+		transition = jump.AddTransition (idle);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 0, "stat");
+		transition.hasExitTime = true;
+		transition = gun.AddTransition (atkidle);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "stat");
+		transition.hasExitTime = true;
+		transition = jump.AddTransition (atkidle);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "stat");
+		transition.hasExitTime = true;
+		transition = lighthit.AddTransition (atkidle);
+		//transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "stat");
+		transition.hasExitTime = true;
+		transition = hardhit.AddTransition (atkidle);
+		//transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "stat");
+		transition.hasExitTime = true;
 	}
-	static AnimatorState MyAddState(AnimatorStateMachine sm,string rolename,string actionname)
+	static AnimatorState MyAddState(AnimatorStateMachine sm,string rolename,string actionname,WrapMode wm)
 	{
 		AnimationClip newClip = AssetDatabase.LoadAssetAtPath("Assets/Resources/主角/"+rolename+"@"+actionname+".FBX", typeof(AnimationClip)) as AnimationClip;
+		newClip.wrapMode = wm;//是否重复播放
 		AnimatorState d = sm.AddState(actionname);
 		d.motion = newClip;
 		return d;

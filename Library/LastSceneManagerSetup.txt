@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/GameSceneTest.unity
+- path: Assets/Scenes/Foreste-E.unity
   isLoaded: 1
   isActive: 1
