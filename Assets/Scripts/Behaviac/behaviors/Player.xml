@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Behavior Version="5">
+  <Node Class="Behaviac.Design.Nodes.Behavior" AgentType="&quot;&quot;" Domains="" Enable="true" HasOwnPrefabData="false" Id="-1" PrefabName="" PrefabNodeId="-1">
+    <Comment Background="NoColor" Text="" />
+    <DescriptorRefs value="0:" />
+    <Attachment Class="PluginBehaviac.Events.StartCondition" Enable="true" Id="0" PrefabAttachmentId="-1" TargetFSMNodeId="1" />
+    <FSMNodes ScreenLocationX="0" ScreenLocationY="0">
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="1" IsEndState="false" Method="&quot;&quot;" Name="idle" PrefabName="" PrefabNodeId="-1" ScreenLocationX="211.7143" ScreenLocationY="-128.2143">
+        <Comment Background="NoColor" Text="" />
+        <Attachment Class="PluginBehaviac.Events.TransitionCondition" Effectors="0:" Enable="true" Id="10" Operator="Equal" Opl="" Opr1="&quot;&quot;" Opr2="&quot;&quot;" PrefabAttachmentId="-1" TargetFSMNodeId="5" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="2" IsEndState="false" Method="&quot;&quot;" Name="run" PrefabName="" PrefabNodeId="-1" ScreenLocationX="225" ScreenLocationY="-55">
+        <Comment Background="NoColor" Text="" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="3" IsEndState="false" Method="&quot;&quot;" Name="jump" PrefabName="" PrefabNodeId="-1" ScreenLocationX="365" ScreenLocationY="-53.21428">
+        <Comment Background="NoColor" Text="" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="4" IsEndState="false" Method="&quot;&quot;" Name="gun" PrefabName="" PrefabNodeId="-1" ScreenLocationX="11.71429" ScreenLocationY="-71.28571">
+        <Comment Background="NoColor" Text="" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="5" IsEndState="false" Method="&quot;&quot;" Name="takeweapon" PrefabName="" PrefabNodeId="-1" ScreenLocationX="173.1429" ScreenLocationY="45.42857">
+        <Comment Background="NoColor" Text="" />
+        <Attachment Class="PluginBehaviac.Events.TransitionCondition" Effectors="0:" Enable="true" Id="11" Operator="Equal" Opl="" Opr1="&quot;&quot;" Opr2="&quot;&quot;" PrefabAttachmentId="-1" TargetFSMNodeId="6" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="6" IsEndState="false" Method="&quot;&quot;" Name="atkidle" PrefabName="" PrefabNodeId="-1" ScreenLocationX="151.5001" ScreenLocationY="136.5714">
+        <Comment Background="NoColor" Text="" />
+        <Attachment Class="PluginBehaviac.Events.TransitionCondition" Effectors="0:" Enable="true" Id="12" Operator="Equal" Opl="" Opr1="&quot;&quot;" Opr2="&quot;&quot;" PrefabAttachmentId="-1" TargetFSMNodeId="9" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="7" IsEndState="false" Method="&quot;&quot;" Name="lighthit" PrefabName="" PrefabNodeId="-1" ScreenLocationX="344.7143" ScreenLocationY="48.78571">
+        <Comment Background="NoColor" Text="" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="8" IsEndState="false" Method="&quot;&quot;" Name="hardhit" PrefabName="" PrefabNodeId="-1" ScreenLocationX="349.314" ScreenLocationY="129.2219">
+        <Comment Background="NoColor" Text="" />
+      </Node>
+      <Node Class="PluginBehaviac.Nodes.State" Enable="true" HasOwnPrefabData="false" Id="9" IsEndState="false" Method="&quot;&quot;" Name="putweapon" PrefabName="" PrefabNodeId="-1" ScreenLocationX="542.8854" ScreenLocationY="-27.20664">
+        <Comment Background="NoColor" Text="" />
+      </Node>
+    </FSMNodes>
+  </Node>
+</Behavior>

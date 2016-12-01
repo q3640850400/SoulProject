@@ -55,9 +55,9 @@ public class SM : Editor {
 	[MenuItem ("MyMenu/AddSwordAnimation")]
 	static void AddSwordAnimation(){
 		string rolename;
-		string actionname;
-		AnimatorState stateA1;
-		AnimationClip newClip;
+		//string actionname;
+		//AnimatorState stateA1;
+		//AnimationClip newClip;
 
 		// Creates the controller
 		rolename = "sword";
@@ -70,20 +70,27 @@ public class SM : Editor {
 		var rootStateMachine = controller.layers[0].stateMachine;
 
 		// Add States
-		AnimatorState idle=MyAddState(rootStateMachine,"sword","idle",WrapMode.Loop);
-		AnimatorState run=MyAddState(rootStateMachine,"sword","run",WrapMode.Loop);
-		AnimatorState gun=MyAddState(rootStateMachine,"sword","gun",WrapMode.Once);
+		AnimatorState idle=MyAddState(rootStateMachine,"sword","idle",WrapMode.Loop);//from putweapon
+		AnimatorState run=MyAddState(rootStateMachine,"sword","run",WrapMode.Loop);//1
+		AnimatorState gun=MyAddState(rootStateMachine,"sword","gun",WrapMode.Once);//3
+		AnimatorState atkidle=MyAddState(rootStateMachine,"sword","atkidle",WrapMode.Loop);//from takeweapon
+		AnimatorState hardhit=MyAddState(rootStateMachine,"sword","hardhit",WrapMode.Once);//5
+		AnimatorState jump=MyAddState(rootStateMachine,"sword","jump",WrapMode.Once);//2
+		AnimatorState lighthit=MyAddState(rootStateMachine,"sword","lighthit",WrapMode.Once);//4
+		AnimatorState takeweapon=MyAddState(rootStateMachine,"sword","takeweapon",WrapMode.Once);//7
+		AnimatorState putweapon=MyAddState(rootStateMachine,"sword","putweapon",WrapMode.Once);//6
+
+		// Add Events
 		AnimationEvent[] ae=new AnimationEvent[1];
 		ae[0]=new AnimationEvent(); 
-		ae[0].time = 1f;
-		ae[0].functionName = "Idle";
-		AnimationUtility.SetAnimationEvents (idle.motion as AnimationClip,ae);
-		AnimatorState atkidle=MyAddState(rootStateMachine,"sword","atkidle",WrapMode.Loop);
-		AnimatorState hardhit=MyAddState(rootStateMachine,"sword","hardhit",WrapMode.Once);
-		AnimatorState jump=MyAddState(rootStateMachine,"sword","jump",WrapMode.Once);
-		AnimatorState lighthit=MyAddState(rootStateMachine,"sword","lighthit",WrapMode.Once);
-		AnimatorState takeweapon=MyAddState(rootStateMachine,"sword","takeweapon",WrapMode.Once);
-		AnimatorState putweapon=MyAddState(rootStateMachine,"sword","putweapon",WrapMode.Once);
+		ae[0].time = 0f;
+		ae[0].functionName = "Idle";//返回idle状态
+		AnimationUtility.SetAnimationEvents (lighthit.motion as AnimationClip,ae);
+		AnimationUtility.SetAnimationEvents (hardhit.motion as AnimationClip,ae);
+		AnimationUtility.SetAnimationEvents (gun.motion as AnimationClip,ae);
+		//AnimationUtility.SetAnimationEvents (jump.motion as AnimationClip,ae);
+		AnimationUtility.SetAnimationEvents (takeweapon.motion as AnimationClip,ae);
+		AnimationUtility.SetAnimationEvents (putweapon.motion as AnimationClip,ae);
 
 		// Add Transitions
 
@@ -97,6 +104,14 @@ public class SM : Editor {
 		transition.hasExitTime = false;
 
 		//run to others
+		transition = run.AddTransition (idle);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 0, "act");
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 0, "stat");
+		transition.hasExitTime = false;
+		transition = run.AddTransition (atkidle);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 0, "act");
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "stat");
+		transition.hasExitTime = false;
 		transition = run.AddTransition (jump);
 		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 2, "act");
 		transition.hasExitTime = false;
@@ -108,8 +123,14 @@ public class SM : Editor {
 		transition = atkidle.AddTransition (run);
 		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "act");
 		transition.hasExitTime = false;
-		transition = idle.AddTransition (putweapon);
+		transition = atkidle.AddTransition (putweapon);
 		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 6, "act");
+		transition.hasExitTime = false;
+		transition = atkidle.AddTransition (lighthit);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 4, "act");
+		transition.hasExitTime = false;
+		transition = atkidle.AddTransition (hardhit);
+		transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 5, "act");
 		transition.hasExitTime = false;
 
 		//others to others

@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AnimationEvents.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
     <Files>
       <File FileName="Assets\Scripts\Init_Ctrl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Editor\Test.cs" Line="84" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\Editor\Test.cs" Line="91" Column="75" />
+      <File FileName="Assets\Scripts\Player.cs" Line="19" Column="32" />
       <File FileName="Assets\Scripts\Net_Ctrl.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Ctrl.cs" Line="1" Column="1" />
-      <File FileName="Assets\AnimationEvents.cs" Line="1" Column="1" />
+      <File FileName="Assets\AnimationEvents.cs" Line="17" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -81,7 +81,7 @@ ModelImporter:
     400070: //RootNode
     400072: "\u624B\u5251\u9AA8\u9ABC"
     400074: "\u80CC\u5251\u9AA8\u9ABC"
-    7400000: Take 001
+    7400000: atkidle
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -90,7 +90,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleRotations: 1
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -103,7 +103,111 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: atkidle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: IK Chain001
+        weight: 1
+      - path: IK-LeftFoot
+        weight: 1
+      - path: IK-Neck
+        weight: 1
+      - path: IK-RightFoot
+        weight: 1
+      - path: IK-RightHand
+        weight: 1
+      - path: Point001
+        weight: 1
+      - path: Point001/Bone001
+        weight: 1
+      - path: Point001/Bone001/Bone002
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone004/Bone018
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone012
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone012/Bone013
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone012/Bone013/Bone014
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone012/Bone013/Bone014/Bone015
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone012/Bone013/Bone014/Bone015/Bone017
+        weight: 1
+      - path: "Point001/Bone001/Bone002/Bone003/Bone012/Bone013/Bone014/Bone015/Bone017/\u624B\u5251\u9AA8\u9ABC"
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone012(mirrored)
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone012(mirrored)/Bone013(mirrored)
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone012(mirrored)/Bone013(mirrored)/Bone014(mirrored)
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone012(mirrored)/Bone013(mirrored)/Bone014(mirrored)/Bone015(mirrored)
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone003/Bone012(mirrored)/Bone013(mirrored)/Bone014(mirrored)/Bone015(mirrored)/Bone017(mirrored)
+        weight: 1
+      - path: Point001/Bone001/Bone002/Bone021
+        weight: 1
+      - path: "Point001/Bone001/Bone002/Bone021/\u80CC\u5251\u9AA8\u9ABC"
+        weight: 1
+      - path: Point001/Bone019
+        weight: 1
+      - path: Point001/Bone019/Bone020
+        weight: 1
+      - path: Point001/Bone019/Bone020/Bone007
+        weight: 1
+      - path: Point001/Bone019/Bone020/Bone007/Bone008
+        weight: 1
+      - path: Point001/Bone019/Bone020/Bone007/Bone008/Bone009
+        weight: 1
+      - path: Point001/Bone019/Bone020/Bone007/Bone008/Bone009/Bone010
+        weight: 1
+      - path: Point001/Bone019/Bone020/Bone007/Bone008/Bone009/Bone010/Bone016
+        weight: 1
+      - path: Point001/Bone019/Bone020(mirrored)
+        weight: 1
+      - path: Point001/Bone019/Bone020(mirrored)/Bone007(mirrored)
+        weight: 1
+      - path: Point001/Bone019/Bone020(mirrored)/Bone007(mirrored)/Bone008(mirrored)
+        weight: 1
+      - path: Point001/Bone019/Bone020(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)
+        weight: 1
+      - path: Point001/Bone019/Bone020(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)/Bone010(mirrored)
+        weight: 1
+      - path: Point001/Bone019/Bone020(mirrored)/Bone007(mirrored)/Bone008(mirrored)/Bone009(mirrored)/Bone010(mirrored)/Bone016(mirrored)
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

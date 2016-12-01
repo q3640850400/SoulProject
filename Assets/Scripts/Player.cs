@@ -5,15 +5,17 @@ public class Player : MonoBehaviour {
 	public static Player Instance = null;
 	private CharacterController cc=null;
 	public float JUMPW = 5f;
-	public float SPD= 5f;
+	public float SPD= 20f;
 	public float ATK;
 	public float Gravity= 9.8f;
 	private int facedr = 1;//面向右边;//面向0左边，1右边
 	public GameObject sp=null;
 	private Rigidbody2D Rbody2D = null;
+	private Rigidbody Rbody = null;
 	public int unitid = 0;
 	public bool online=false;
 	private Animator animator = null;
+	private Vector3 moveDirection = Vector3.zero;
 	// Use this for initialization
 	void Awake(){
 		Instance = this;
@@ -27,15 +29,74 @@ public class Player : MonoBehaviour {
 		//move ();
 		//jump ();
 		//atk ();
-		kbatk3D();
+		//kbatk3D();
 		kbmove3D();
-		gravity ();
+		//gravity ();
+		Action();
 	}
+	/// <summary>
+	/// //////////////////////////////////////////
+	/// </summary>
+	public void gun(){
+		animator.SetInteger ("act",3);
+	}
+	public void run(){
+		animator.SetInteger ("act",1);
+	}
+	public void takeweapon(){
+		if (animator.GetInteger ("stat") == 0) {
+			animator.SetInteger ("act", 7);
+			animator.SetInteger ("stat", 1);
+		} else {
+			animator.SetInteger ("act", 6);
+			animator.SetInteger ("stat", 0);
+		}
+	}
+	public void jump(){
+		//animator.SetInteger ("act",2);
+		if (animator.GetInteger ("act") == 1) {
+			moveDirection.y = JUMPW;
+		}
+	}
+	public void lighthit(){
+		animator.SetInteger ("act",4);
+	}
+	public void hardhit(){
+		animator.SetInteger ("act",5);
+	}
+	public void putweapon(){
+		animator.SetInteger ("act",6);
+		animator.SetInteger ("stat",0);
+	}
+	void kbmove3D(){
+		float dr = Input.GetAxis ("Horizontal");
+		moveDirection.x = dr * SPD;
+	}
+	/// <summary>
+	/// //////////////////////////////////////
+	/// </summary>
+	void Action(){
+		if (moveDirection.x > 0) {
+			transform.localRotation = Quaternion.Euler (0, 180, 0);
+		}
+		if (moveDirection.x < 0) {
+			transform.localRotation = Quaternion.Euler (0, 0, 0);
+		}
+		if (cc.isGrounded && moveDirection.y<0) {
+			moveDirection.y = 0;
+		}
+		moveDirection.y -= Gravity * Time.deltaTime;
+		cc.Move(moveDirection * Time.deltaTime);
+	}
+	/// <summary>
+	/// ///////////////////////////////////
+	/// </summary>
 	void init(){
 		Gravity = 9.8f;
 		cc = gameObject.GetComponent<CharacterController> ();//没有用到CharacterController
 		Rbody2D = gameObject.GetComponent<Rigidbody2D> ();
 		animator = this.GetComponentInChildren<Animator> ();
+		Rbody = gameObject.GetComponent<Rigidbody> ();
 	}
 	void example(){
 		Net_Ctrl.Instance.ag.Send("jump:"+Net_Ctrl.Instance.ag.poid.ToString()+"/"+unitid+"/"+
@@ -43,8 +104,14 @@ public class Player : MonoBehaviour {
 	}
 	//暂时未用
 	void gravity(){
-		cc.Move (new Vector3(0f, -Gravity, 0f));
+		if (cc.isGrounded && moveDirection.y<0) {
+			moveDirection.y = 0;
+		}
+		moveDirection.y -= Gravity * Time.deltaTime;
+		cc.Move(moveDirection * Time.deltaTime);
+		//cc.Move (new Vector3(0f, -Gravity*Time.deltaTime, 0f));
 	}
+
 	//位置更新
 	public void resetPos(float posx,float posy,float posz,int facedr){
 		transform.position = new Vector3 (posx, posy, posz);
@@ -54,22 +121,23 @@ public class Player : MonoBehaviour {
 		Rbody2D.velocity =new Vector2(0f,JUMPW);
 		animator.SetInteger ("stat", 1);
 	}
-	void kbmove3D(){
-		float dr = Input.GetAxis ("Horizontal");
-		//Vector3 dr = new Vector3 (Input.GetAxis ("Horizontal"), 0f, 0f);
-		if (dr != 0) {
-			if (dr > 0) {
-				transform.localRotation = Quaternion.Euler (0, 180, 0);
-			} else {
-				transform.localRotation = Quaternion.Euler (0, 0, 0);
-			}
-			cc.Move (new Vector3(dr,0,0) * SPD * Time.deltaTime);
-			animator.SetInteger ("stat", 1);
-		} else {
-			if(animator.GetInteger("stat")==1)
-				animator.SetInteger ("stat", 0);
-		}
-	}
+//	void kbmove3D(){
+//		float dr = Input.GetAxis ("Horizontal");
+//		//Vector3 dr = new Vector3 (Input.GetAxis ("Horizontal"), 0f, 0f);
+//		if (dr != 0) {
+//			animator.SetInteger ("act", 1);
+//		}
+//		if (animator.GetInteger("act") == 1 || animator.GetInteger("act") == 0) {
+//			if (dr > 0) {
+//				transform.localRotation = Quaternion.Euler (0, 180, 0);
+//			} else {
+//				transform.localRotation = Quaternion.Euler (0, 0, 0);
+//			}
+//			cc.Move (new Vector3(dr,0,0) * SPD * Time.deltaTime);
+//		}
+//			
+//	}
+
 	//移动
 	void kbmove(){
 		int stat = animator.GetInteger ("stat");
@@ -145,27 +213,5 @@ public class Player : MonoBehaviour {
 			Net_Ctrl.Instance.ag.Send("atk:"+Net_Ctrl.Instance.ag.poid.ToString()+"/"+unitid.ToString()+"/"+atkid.ToString());
 		}
 	}
-	public void gun(){
-		animator.SetInteger ("act",3);
-	}
-	public void run(){
-		animator.SetInteger ("act",1);
-	}
-	public void takeweapon(){
-		animator.SetInteger ("act",7);
-		animator.SetInteger ("stat",1);
-	}
-	public void jump(){
-		animator.SetInteger ("act",2);
-	}
-	public void lighthit(){
-		animator.SetInteger ("act",4);
-	}
-	public void hardhit(){
-		animator.SetInteger ("act",5);
-	}
-	public void putweapon(){
-		animator.SetInteger ("act",6);
-		animator.SetInteger ("stat",0);
-	}
+
 }
